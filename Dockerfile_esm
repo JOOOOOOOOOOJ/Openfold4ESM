@@ -1,0 +1,18 @@
+FROM jojo276/esm:v5.11
+
+RUN apt-get install aria2 -qq
+RUN pip install -q omegaconf
+RUN pip install -q biopython
+RUN pip install -q ml_collections
+RUN pip install -q einops
+RUN pip install -q py3Dmol
+RUN pip install -q modelcif
+RUN pip install -q jax
+RUN pip install -q jaxlib
+RUN pip install -q scipy
+
+RUN pip install -q git+https://github.com/JOOOOOOOOOOJ/ESM_NMR.git
+
+ENV TRITON_CACHE_DIR=/tmp/.triton
+
+ENV XDG_CACHE_HOME=/tmp/.cache
